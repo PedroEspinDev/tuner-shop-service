@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:./h2db;
+    driver-class-name: org.h2.Driver
+    username: pe
+    password:
+
+  jpa:
+    hibernate:
+      generate-ddl: false
+      ddl-auto: update
+    properties:
+      database-platform: org.hibernate.dialect.H2Dialect
+      format_sql: true
+      show_sql: true
+
+    h2:
+      console:
+        enabled: true
