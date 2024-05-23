@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "9fff0c76-374f-4ea8-96cd-4a2bc291636d",
+		"name": "tuner-shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26266401"
+	},
+	"item": [
+		{
+			"name": "add person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/newPerson"
+			},
+			"response": []
+		},
+		{
+			"name": "add product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Llavero BMW\",\r\n    \"price\": 4.99,\r\n    \"person\": {\r\n        \"personId\": \r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/product/newProduct"
+			},
+			"response": []
+		},
+		{
+			"name": "person by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/person/personById/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person",
+						"personById",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/product/productById/:productId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"product",
+						"productById",
+						":productId"
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/product/products"
+			},
+			"response": []
+		}
+	]
+}

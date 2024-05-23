@@ -23,10 +23,10 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Product getProductById(UUID productId) {
+    public Product getProductById(Long productId) {
         Optional<Product> optionalProduct = productRepository.findById(productId);
         return optionalProduct.orElseThrow(
-                ()-> new RuntimeException("Not found product with this id"));
+                () -> new RuntimeException("Not found product with this id"));
     }
 
 

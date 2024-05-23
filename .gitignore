@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+# Ignore h2db
+h2db.mv.db
+h2db.trace.db
