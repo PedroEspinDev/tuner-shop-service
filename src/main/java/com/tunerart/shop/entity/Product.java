@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -20,6 +19,7 @@ public class Product {
     @JoinColumn(name = "person_id", nullable = false)
     @JsonBackReference
     private Person person;
+
     private String name;
     private double price;
 }
