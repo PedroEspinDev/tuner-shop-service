@@ -15,12 +15,13 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
 
+    private String name;
+    private double price;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "person_id", nullable = false)
     @JsonBackReference
     private Person person;
 
-    private String name;
-    private double price;
 }
 

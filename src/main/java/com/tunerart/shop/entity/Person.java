@@ -17,6 +17,10 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long personId;
 
+    private String email;
+    private String name;
+    private String surname;
+
     @OneToMany(
             mappedBy = "person",
             cascade = CascadeType.ALL,
@@ -25,8 +29,4 @@ public class Person {
 
     @JsonManagedReference
     private List<Product> products;
-
-    private String name;
-    private String surname;
-    private String email;
 }
