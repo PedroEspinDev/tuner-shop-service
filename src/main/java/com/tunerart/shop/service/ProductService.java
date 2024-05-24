@@ -27,6 +27,7 @@ public class ProductService {
         return optionalProduct.orElseThrow(
                 () -> new RuntimeException("Not found product with this id"));
     }
-
-
+    public Optional<Product> findProductByName(String name) {
+        return productRepository.findProductByNameContainingIgnoreCase(name);
+    }
 }

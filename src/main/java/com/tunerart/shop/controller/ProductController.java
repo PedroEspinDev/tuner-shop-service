@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/product")
@@ -35,4 +36,15 @@ public class ProductController {
         return ResponseEntity.ok(product);
     }
 
+    @GetMapping("/productByName/{name}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<?> getProductByName(@PathVariable String name) {
+        Optional<Product> optionalProduct = productService.findProductByName(name);
+        if (optionalProduct.isPresent()) {
+            Product product = optionalProduct.get();
+            return ResponseEntity.ok(product);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
